@@ -1,27 +1,29 @@
-# KDAC0324-J009
-ERecruiter
+# CDAC_Project_WebBasedRecruitment_System
+Web Based Recruitment System web application designed to streamline the recruitment process, making it efficient and user-friendly. This system provides a comprehensive platform for both recruiters and candidates, offering a range of features to simplify and enhance the hiring experience.
 
-**CDAC_Project_ERecruiter**
-It's a Web Based Recruitment System web application designed to streamline the recruitment process, making it efficient and user-friendly. This system provides a comprehensive platform for both recruiters and candidates, offering a range of features to simplify and enhance the hiring experience.
+Change server port in application.properties file according to your machine available port.
+```
+server.port=7878
+```
 
-**TechStack we are going to Use:**
-J2EE
-AWS
-ReactJs
-MySQL
+## TechStack Used:
+- J2EE
+- AWS
+- ReactJs
+- MySQL
 
 
-**Frontend Technologies we are going to use:**
-ReactJs
+## Frontend Technologies used
+- ReactJs
+- - react-router-dom v6
+- - bootstrap v5
+- - recharts (for bar graph on admin dashboard)
+- - bootstrap icons
+- - Axios 
 
-react-router-dom v6
-bootstrap v5
-recharts (for bar graph on admin dashboard)
-bootstrap icons
-Axios
-
-**Deployment will be on:**
-Deployment on AWS S3 bucket as static website.
-Backend will deploy on EC2.
-Using RDS MySQL for database.
-Using S3 bucket to store user images and resume.
+## Deployment Link 
+- http://get-hired-deploy-bucket.s3-website.ap-south-1.amazonaws.com
+- Deployed on AWS S3 bucket as static website.
+- Backend deployed on EC2.
+- Used RDS MySQL for database.
+- Used S3 bucket to store user images and resume.
