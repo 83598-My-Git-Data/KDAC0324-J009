@@ -42,6 +42,9 @@ public class UserEntity extends BaseEntity {
 	@Column(length = 300, nullable = false)
 	private String password;
 	
+	// @Column(nullable = false)
+	// private LocalDate dob;
+
 	@Column(nullable = true)
 	private LocalDate dob;
 	
