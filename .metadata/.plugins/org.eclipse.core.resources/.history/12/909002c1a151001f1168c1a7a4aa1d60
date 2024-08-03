@@ -1,0 +1,32 @@
+package com.app.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Setter @Getter @NoArgsConstructor
+@Entity
+@Table(name="applicants")
+public class ApplicantEntity extends BaseEntity {
+
+	@OneToOne
+	@JoinColumn(name="applicant_id")
+	@MapsId("applicant_id")
+	private UserEntity user;
+	
+	@Column(name="email_id_verify_status",columnDefinition = "TEXT")
+	private boolean emailIdVerfiyStatus;
+	
+	@Column(name="mobile_num_verify_status",columnDefinition = "TEXT")
+	private boolean mobileNumVerifyStatus;
+	
+	
+	
+}
