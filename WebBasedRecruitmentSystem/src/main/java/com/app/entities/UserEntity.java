@@ -17,13 +17,11 @@ import lombok.ToString;
 @Entity
 @Table(name = "user_credentials")
 @NoArgsConstructor
-
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString(exclude = "password") // toString excluding password
-public class UserEntity extends BaseEntity 
-{
+public class UserEntity extends BaseEntity {
 	
 	@Column(length = 20,nullable=false)
 	private String firstName;
