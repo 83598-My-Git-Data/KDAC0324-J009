@@ -44,6 +44,9 @@ public class ApplicantEntity extends BaseEntity {
 	@Column(columnDefinition = "TEXT")
 	private String profileSummary;
 	
+	// @Column(columnDefinition = "TEXT")
+	// private String profilePictureLink;
+
 	@Column(columnDefinition = "TEXT")
 	private String profilePictureLink;
 	
