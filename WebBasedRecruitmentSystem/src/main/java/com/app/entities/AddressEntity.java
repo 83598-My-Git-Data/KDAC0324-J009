@@ -15,39 +15,39 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "Addresses")
+@NoArgsConstructor
+
 @Getter
 @Setter
-@NoArgsConstructor
 @ToString
-public class AddressEntity {
+public class AddressEntity extends BaseEntity{
 	
 	@Column(name = "permanent_address")
 	private String permanentAddress;
 	
-	@Column(length=6)
-	private int pincode;
+	@Column(length = 6)
+	private String pincode;
 	
-	@Column(length=50)
+	@Column(length = 50)
 	private String state;
 	
-	@Column(length=50)
+	@Column(length = 30)
 	private String country;
 	
-	@OneToOne(fetch= FetchType.LAZY)
-	@JoinColumn(name="applicant_id", nullable=false)
-	@MapsId
+	
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="applicant_id",nullable = false)
+	@MapsId	
 	private UserEntity user;
 
-	public AddressEntity(String permanentAddress, int pincode, String state, String country, UserEntity user) {
-		super();
+	public AddressEntity(String permanentAddress, String pincode, String state, String country, UserEntity user) {
+	
 		this.permanentAddress = permanentAddress;
 		this.pincode = pincode;
 		this.state = state;
 		this.country = country;
 		this.user = user;
 	}
-	
-	
 	
 	
 }

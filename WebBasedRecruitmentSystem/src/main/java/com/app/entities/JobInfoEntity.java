@@ -27,8 +27,8 @@ import lombok.Setter;
 
 @Entity
 @Table(name="job_info")
-//@Setter
-//@Getter
+@Setter
+@Getter
 @NoArgsConstructor
 
 public class JobInfoEntity {
@@ -77,13 +77,13 @@ public class JobInfoEntity {
 	@Column(columnDefinition = "TEXT")
 	private String description;
 	
-//	@ManyToMany
-//	@JoinTable(
-//	  name = "saved_job", 
-//	  joinColumns = @JoinColumn(name="job_id"), 
-//	  inverseJoinColumns = @JoinColumn(name="applicant_id"))
-//	private Set<ApplicantEntity> applicant=new HashSet<ApplicantEntity>();
-//	
+	@ManyToMany
+	@JoinTable(
+	  name = "saved_job", 
+	  joinColumns = @JoinColumn(name="job_id"), 
+	  inverseJoinColumns = @JoinColumn(name="applicant_id"))
+	private Set<ApplicantEntity> applicant=new HashSet<ApplicantEntity>();
+	
 	
 
 	@Override
@@ -109,7 +109,7 @@ public class JobInfoEntity {
 //		this.applicant.add(applicant);
 //		applicant.getJob().add(this);
 //	}
-
+//
 //	public void removeApplicant(ApplicantEntity applicant)
 //	{
 //		this.applicant.remove(applicant);
@@ -137,19 +137,20 @@ public class JobInfoEntity {
 
 
 	// mapping a many to many relation between applicant and jobs using third
-	// table applied job
-//	@OneToMany(
-//	        mappedBy = "job",
-//	        cascade = CascadeType.ALL,
-//	        orphanRemoval = true
-//	    )
-//	    private Set<AppliedJob> appliedJobs = new HashSet<>();
+	// table applied job with Bi-Directional Approach
+	@OneToMany
+	(
+	    mappedBy = "job",
+	    cascade = CascadeType.ALL,
+	    orphanRemoval = true
+	)
+	private Set<AppliedJob> appliedJobs = new HashSet<>();
 
-//	@ManyToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name = "job_skill",
-//               joinColumns = @JoinColumn(name = "job_id"),
-//               inverseJoinColumns = @JoinColumn(name = "skill_id"))
-//    private Set<SkillEntity> JobSkills = new HashSet<>();
+	@ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "job_skill",
+               joinColumns = @JoinColumn(name = "job_id"),
+               inverseJoinColumns = @JoinColumn(name = "skill_id"))
+    private Set<SkillEntity> JobSkills = new HashSet<>();
 	
 //	public void addSkill(SkillEntity jobSkill)
 //	{
