@@ -16,9 +16,14 @@ import lombok.Setter;
 public class DepartmentEntity extends BaseEntity
 {
 
+
+
+
+@Column(name="department_name",length = 30)
+private String departmentName;
+
 @Column(name="department_name",length = 30)
 	private String departmentName;
 
-	// @Column(name="department_name",length = 30)
-	// private String departmentName;
+
 }
