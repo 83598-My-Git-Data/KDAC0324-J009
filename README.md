@@ -1,5 +1,5 @@
 # KDAC0324-J009
-# CDAC_Project_ERecruiter
+# ERecruiter
 It's a Web Based Recruitment System web application designed to streamline the recruitment process, making it efficient and user-friendly. This system provides a comprehensive platform for both recruiters and candidates, offering a range of features to simplify and enhance the hiring experience.
 
 
